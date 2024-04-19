@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   database:
     container_name: database
@@ -15,7 +13,7 @@ services:
       - "5432:5432"
     networks:
       backend:
-        ipv4_address: 1.0.0.2
+        ipv4_address: 10.0.0.2
   api:
     container_name: api
     build:
@@ -28,7 +26,7 @@ services:
       - "81:8080"
     networks:
       backend:
-        ipv4_address: 1.0.0.3
+        ipv4_address: 10.0.0.3
       frontend:
   web:
     container_name: web
@@ -39,14 +37,14 @@ services:
       - "80:8080"
     networks:
       backend:
-        ipv4_address: 1.0.0.4
+        ipv4_address: 10.0.0.4
       frontend:
 networks:
   backend:
     driver: bridge
     ipam:
       config:
-        - subnet: 1.0.0.0/29
-          gateway: 1.0.0.1
+        - subnet: 10.0.0.0/29
+          gateway: 10.0.0.1
   frontend:
     driver: bridge

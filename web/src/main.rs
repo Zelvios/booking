@@ -8,11 +8,12 @@ async fn main() -> Result<()> {
     loop {
         let (mut stream, _) = listener.accept().await?;
         tokio::spawn(async move {
-            match handle_client(&mut stream).await  {
+            match handle_client(&mut stream).await {
                 Ok(()) => println!("Connection Successful"),
-                Err(e) => eprintln!("Connection Error: {e}")
+                Err(e) => eprintln!("Connection Error: {e}"),
             }
-        }).await?;
+        })
+        .await?;
     }
 }
 
