@@ -33,8 +33,8 @@ diesel::table! {
     user (id) {
         id -> Int4,
         name -> Varchar,
-        #[max_length = 60]
-        password -> Varchar,
+        #[max_length = 96]
+        password -> Bpchar,
         created -> Timestamp,
     }
 }

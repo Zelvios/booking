@@ -9,3 +9,8 @@ diesel = { version = "2.1.5", features = ["postgres"] }
 serde = { version = "1.0.197", features = ["derive"] }
 dotenvy = "0.15.7"
 actix-web = "4.5.1"
+argon2 = "0.5.3"
+rand = "0.8.5"
+diesel_migrations = "2.1.0"
+anyhow = "1.0.82"
+thiserror = "1.0.58"
